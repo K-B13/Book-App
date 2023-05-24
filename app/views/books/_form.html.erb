@@ -1,0 +1,10 @@
+<%= form_for [@author, @book] do |f| %>
+
+  <div class='field'>
+    <%= f.label :name, 'Title of book' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= f.submit 'Submit' %>
+
+  <% end %>

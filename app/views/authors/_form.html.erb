@@ -1,0 +1,24 @@
+<%= form_for @author do |f| %>
+  <div class="field'>
+    <%= f.label :first_name, 'First Name' %>
+    <%= f.text_field :first_name, placeholder: "Input Author's first name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, 'Last Name' %>
+    <%= f.text_field :last_name, placeholder: "Input Author's last name" %>
+  </div
+
+  <div class="field">
+    <%= f.label :number_of_books, 'Number of Books' %>
+    <%= f.text_field :number_of_books, placeholder: "Input no of books by author" %>
+  </div>
+
+  <div class="field">
+      <%= f.label :genre, 'Genre' %>
+      <%= f.text_field :genre, placeholder: "Main genre of this author" %>
+  </div>
+  
+  <%= f.submit 'Submit', :class => 'button' %>
+
+<% end %>

@@ -1,0 +1,23 @@
+<%= link_to 'All Authors', authors_path %>
+
+<h1> <%= "#{@author.first_name} #{@author.last_name}" %> </h1>
+
+<p> <%= "Number of books: #{@author.number_of_books}" %> </p>
+<p> <%= "Genre of books: #{@author.genre}" %> </p>
+
+<h2>Books</h2>
+<% @books.each do |book| %>
+  <%= link_to "#{book.name}", author_book_path(@author, book) %> 
+  <br/><br/>
+  <%= link_to 'Edit Book', edit_author_book_path(@author, book) %>
+  &nbsp;|&nbsp;
+  <%= link_to 'Delete Book', author_book_path(@author, book),
+  data: { turbo_method: :delete, 
+  turbo_confirm: "Are you sure you want to delete #{book.name}" 
+  }%>
+  <br/><br/>
+<% end %>
+<br /><br /><br />
+<%= link_to 'Add New Book', new_author_book_path(@author)  %>
+
+
